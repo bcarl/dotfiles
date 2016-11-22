@@ -1,0 +1,27 @@
+# shortcut to this dotfiles path is $DOTFILES
+export DOTFILES=$HOME/.dotfiles
+
+# Stash your environment variables in ~/.localrc. This means they'll stay out
+# of your main dotfiles repository (which may be public, like this one), but
+# you'll have access to them in your scripts.
+if [ -a ~/.localrc ]
+then
+  source ~/.localrc
+fi
+
+# load the path files
+while IFS= read -r -u3 -d $'\0' file; do
+  if [ -a "$file" ]
+  then
+    source "$file"
+  fi
+done 3< <(find $DOTFILES -mindepth 2 -maxdepth 2 -type f -name path.bash -print0)
+
+# load everything but the path files
+while IFS= read -r -u3 -d $'\0' file; do
+  if [ -a "$file" ]
+  then
+    source "$file"
+  fi
+done 3< <(find $DOTFILES -mindepth 2 -maxdepth 2 -type f \
+          -name "*.bash" -not -name path.bash -print0)

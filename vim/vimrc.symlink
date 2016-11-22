@@ -1,0 +1,4 @@
+colorscheme desert
+set number
+set relativenumber
+syntax on

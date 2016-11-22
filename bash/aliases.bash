@@ -1,0 +1,23 @@
+# Navigation
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
+
+alias b64decode_pasteboard='pbpaste | base64 -D | pbcopy'
+alias b64encode_pasteboard='pbpaste | base64 | pbcopy'
+alias c='cat'
+alias f.='open -a Finder .'
+alias f='open -a Finder'
+alias http='python -m SimpleHTTPServer'
+alias l='ls -l'
+alias ll='ls -l'
+alias lld='find . -maxdepth 1 -type d'
+alias lsd='ls -ltrF | grep ^d'
+alias n='nano'
+alias o='open'
+alias p='python'
+alias pbsort='pbpaste | sort | pbcopy'
+alias stats="history | awk '{CMD[\$2]++;count++;}END{for(a in CMD)print CMD[a] \" \" CMD[a]/count*100 \"% \" a;}' | grep -v './' | column -c3 -s ' ' -t | sort -nr | nl | head -n20"
+alias vi='vim'

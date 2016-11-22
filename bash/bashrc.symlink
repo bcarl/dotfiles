@@ -1,6 +1,15 @@
 # shortcut to this dotfiles path is $DOTFILES
 export DOTFILES=$HOME/.dotfiles
 
+# path manipulation
+path_append() {
+  [[ ":$PATH:" != *:"$1":* ]] && [ -d "$1" ] && export PATH="$PATH:$1"
+}
+
+path_prepend() {
+  [[ ":$PATH:" != *:"$1":* ]] && [ -d "$1" ] && export PATH="$1:$PATH"
+}
+
 # Stash your environment variables in ~/.localrc. This means they'll stay out
 # of your main dotfiles repository (which may be public, like this one), but
 # you'll have access to them in your scripts.

@@ -4,8 +4,8 @@ then
   eval "$(hub alias -s)"
 fi
 
-alias g='git'
 alias g..='cd $(git rev-parse --show-toplevel)'
+alias g='git'
 alias ga='git add'
 alias gaa='git add -A'
 alias gap='git add -p'
@@ -36,11 +36,11 @@ alias gpu='git pull'
 alias gr='git remote'
 alias gra='git remote add'
 alias grau='git remote add upstream'
-alias grv='git remote -v'
 alias gre='git rebase'
 alias grei='git rebase -i'
 alias grm='git rm'
 alias grmad='cd $(git rev-parse --show-toplevel); gs --porcelain | egrep "^ D" | cut -c 4- | xargs git rm; cd -'
+alias grv='git remote -v'
 alias gs='git status'
 alias gsa='git stash apply'
 alias gss='git stash save'

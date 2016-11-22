@@ -15,5 +15,6 @@ brew 'wget'
 brew 'xz'
 
 cask '1password'
+cask 'gitx'
 cask 'google-chrome'
 cask 'spectacle'
